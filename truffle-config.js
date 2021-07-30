@@ -1,3 +1,6 @@
+const { alchemyApiKey, mnemonic } = require("./secrets.json");
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -66,11 +69,16 @@ module.exports = {
 		// skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
 		// },
 		// Useful for private networks
-		// private: {
-		// provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
-		// network_id: 2111,   // This network is yours, in the cloud.
-		// production: true    // Treats this network as if it was a public net. (default: false)
-		// }
+		rinkeby: {
+			provider: () =>
+				new HDWalletProvider(
+					mnemonic,
+					`https://eth-rinkeby.alchemyapi.io/v2/${alchemyApiKey}`
+				),
+			network_id: 4, // This network is yours, in the cloud.
+			gasPrice: 10e9, // Treats this network as if it was a public net. (default: false)
+			skipDryRun: true,
+		},
 	},
 
 	// Set default mocha options here, use special reporters etc.
