@@ -1,12 +1,21 @@
 {
-  "name": "learn",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "learn",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "npx truffle test",
+		"compile": "npx truffle compile",
+		"migrate": "npx truffle migrate --network development",
+		"console": "npx truffle console --network development"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@openzeppelin/contracts": "^4.2.0",
+		"chai": "^4.3.4",
+		"ganache-cli": "^6.12.2",
+		"truffle": "^5.4.2"
+	}
 }

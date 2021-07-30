@@ -57,3 +57,6 @@ allFiredEvents
 # hardhat
 cache
 artifacts
+
+# skek
+secrets.json
